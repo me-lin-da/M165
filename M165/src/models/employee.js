@@ -13,7 +13,7 @@ const employeeSchema = new mongoose.Schema({
     },
     company:{
         name:{
-            type: Schema.Types.ObjectId, ref: 'Company'},
+            type: Schema.Types.ObjectId, ref: 'Compnay'},
         }
     
 })

@@ -6,6 +6,10 @@ const port = 3000;
 const router = express.Router();
 let app = express();
 let indexRouter =require("./routes/employee.route")
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use("/", indexRouter);
 
 mongoose.connect("mongodb://root:root@localhost:27017/mydb")

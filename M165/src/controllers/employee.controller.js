@@ -25,20 +25,25 @@ const newEmployee = async (req, res)=> {
     }
 
     const updateEmployee = async (req, res)=> {
-        const user = new EmployeeModel({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName
-              });
-          try {
-            const newUser = await user.save();
-            res.status(201).json(newUser);
-          } catch (err) {
-            res.status(400).json({ message: err.message });
-          }
-        }
+
+        return EmployeeModel.updateOne({_id: _id}, {firstName: firstName}, function(err){
+          if (err) {
+            return res.status(400).json({ message: "reset password link error" })
+            }else{
+              transport.sendMail(data, (err)=>{
+                if (err) {
+                  return console.log(err);
+              }
+              res.status(200).json({message: "Email to reset your password has been sent"})
+            })
+        }})
+            }
+
+        
 
 
 module.exports = {
     getAllEmployees,
-    newEmployee
+    newEmployee,
+    updateEmployee
 };  

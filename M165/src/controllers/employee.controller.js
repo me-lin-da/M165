@@ -27,8 +27,8 @@ const newEmployee = async (req, res)=> {
     const updateEmployee = async (req, res)=> {
     
       try {
-        const myquery = { firstName: "ricky" };
-        const newvalues = { $set: { lastName: "Micky" } };
+        const myquery = { _id: req.body._id };
+        const newvalues = { $set: { lastName: req.body.lastName, firstName: req.body.firstName } };
     
         await EmployeeModel.updateOne(myquery, newvalues);
     

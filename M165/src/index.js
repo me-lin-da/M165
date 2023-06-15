@@ -5,7 +5,7 @@ let express = require("express");
 const port = 3000;
 const router = express.Router();
 let app = express();
-let indexRouter =require("./routes/employee.route")
+let indexRouter =require("./routes/route")
 const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: false }));

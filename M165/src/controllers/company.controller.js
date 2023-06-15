@@ -1,36 +1,37 @@
 let express = require("express");
 let router = express.Router();
 const app = express();
-const EmployeeModel = require("../models/employee")
+const CompanyModel = require("../models/company")
 
-const getAllEmployees = (async (req, res)=> { 
-    let results = await EmployeeModel.find({})
+const getAllCompanies = (async (req, res)=> { 
+    let results = await CompanyModel.find({})
     .limit(50);
     
   res.send(results).status(200);
 
 }  )
 
-const newEmployee = async (req, res)=> {
-    const user = new EmployeeModel({
-      firstName: req.body.firstName,
-        lastName: req.body.lastName
+const newCompany = async (req, res)=> {
+    const company = new CompanyModel({
+      name: req.body.name,
+      city: req.body.city
+       
           });
       try {
-        const newUser = await user.save();
-        res.status(201).json(newUser);
+        const newCompany = await company.save();
+        res.status(201).json(newCompany);
       } catch (err) {
         res.status(400).json({ message: err.message });
       }
     }
 
-    const updateEmployee = async (req, res)=> {
+    const updateCompany = async (req, res)=> {
     
       try {
         const myquery = { _id: req.body._id };
-        const newvalues = { $set: { lastName: req.body.lastName, firstName: req.body.firstName } };
-    
-        await EmployeeModel.updateOne(myquery, newvalues);
+        const newvalues = { $set: { name: req.body.name, city: req.body.city } };
+
+        await CompanyModel.updateOne(myquery, newvalues);
     
         // The code below assumes you have defined the 'transport' and 'data' variables.
             
@@ -41,11 +42,11 @@ const newEmployee = async (req, res)=> {
       }
             }
 
-    const deleteEmployee = async (req, res) =>{
+    const deleteCompany = async (req, res) =>{
       const { id } = req.params;
 
       try {
-        await EmployeeModel.findByIdAndDelete(id);
+        await CompanyModel.findByIdAndDelete(id);
     
         res.status(200).json({ message: 'Employee deleted successfully' });
       } catch (err) {
@@ -58,8 +59,8 @@ const newEmployee = async (req, res)=> {
 
 
 module.exports = {
-    getAllEmployees,
-    newEmployee,
-    updateEmployee,
-    deleteEmployee
+    getAllCompanies,
+    newCompany,
+    updateCompany,
+    deleteCompany
 };  

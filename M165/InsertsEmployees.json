@@ -1,5 +1,5 @@
 use sample_mflix
-db.movies.insertMany([
+db.employees.insertMany([
    {
       FirstName: "Tehran",
       LastName: "Doroudchi",

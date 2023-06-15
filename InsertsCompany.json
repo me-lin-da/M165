@@ -8,7 +8,8 @@ db.movies.insertMany([
     {
       Name: "Noser",
       CIty: "Zurich",
-      LocationCode: 2
+      LocationCode: 2,
+      EmployeeCount: 10
     },
     {
       Name: "ID",
@@ -18,7 +19,8 @@ db.movies.insertMany([
     {
       Name: "MSP",
       CIty: "London",
-      LocationCode: 4
+      LocationCode: 4,
+      EmployeeCount: 12
     },
     {
       Name: "Noser",
@@ -33,7 +35,8 @@ db.movies.insertMany([
     {
       Name: "Apple",
       CIty: "Paris",
-      LocationCode: 7
+      LocationCode: 7,
+      EmployeeCount: 9
     },
     {
       Name: "Nike",

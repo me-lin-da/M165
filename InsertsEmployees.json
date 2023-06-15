@@ -8,7 +8,8 @@ db.movies.insertMany([
     {
       FirstName: "Lin",
       LastName: "Sinzig",
-      BirthYear: 2005
+      BirthYear: 2005,
+      Nationality: "Swiss"
     },
     {
       FirstName: "Ricky",
@@ -18,7 +19,8 @@ db.movies.insertMany([
     {
       FirstName: "Andri",
       LastName: "Luthi",
-      BirthYear: 2004
+      BirthYear: 2004,
+      Nationality: "Swiss"
     },
     {
       FirstName: "Loic",
@@ -28,7 +30,8 @@ db.movies.insertMany([
     {
       FirstName: "Jan",
       LastName: "Jackson",
-      BirthYear: 2000
+      BirthYear: 2000,
+      Nationality: "Swiss"
     },
     {
       FirstName: "David",
@@ -38,7 +41,8 @@ db.movies.insertMany([
     {
       FirstName: "Paulo",
       LastName: "Lalicata",
-      BirthYear: 1989
+      BirthYear: 1989,
+      Nationality: "Italian"
     },
     {
       FirstName: "Ben",

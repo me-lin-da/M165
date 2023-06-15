@@ -41,11 +41,25 @@ const newEmployee = async (req, res)=> {
       }
             }
 
+    const deleteEmployee = async (req, res) =>{
+      const { id } = req.params;
+
+      try {
+        await EmployeeModel.findByIdAndDelete(id);
+    
+        res.status(200).json({ message: 'Employee deleted successfully' });
+      } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'An error occurred while deleting the employee' });
+      }
+    }
+
         
 
 
 module.exports = {
     getAllEmployees,
     newEmployee,
-    updateEmployee
+    updateEmployee,
+    deleteEmployee
 };  

@@ -25,18 +25,20 @@ const newEmployee = async (req, res)=> {
     }
 
     const updateEmployee = async (req, res)=> {
-
-        return EmployeeModel.updateOne({_id: _id}, {firstName: firstName}, function(err){
-          if (err) {
-            return res.status(400).json({ message: "reset password link error" })
-            }else{
-              transport.sendMail(data, (err)=>{
-                if (err) {
-                  return console.log(err);
-              }
-              res.status(200).json({message: "Email to reset your password has been sent"})
-            })
-        }})
+    
+      try {
+        const myquery = { firstName: "ricky" };
+        const newvalues = { $set: { lastName: "Micky" } };
+    
+        await EmployeeModel.updateOne(myquery, newvalues);
+    
+        // The code below assumes you have defined the 'transport' and 'data' variables.
+            
+        res.status(200).json({ newvalues });
+      } catch (err) {
+        console.error(err);
+        res.status(400).json({ err});
+      }
             }
 
         

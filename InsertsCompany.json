@@ -1,0 +1,53 @@
+use sample_mflix
+db.movies.insertMany([
+   {
+      Name: "Noser",
+      CIty: "Bern",
+      LocationCode: 1
+    },
+    {
+      Name: "Noser",
+      CIty: "Zurich",
+      LocationCode: 2
+    },
+    {
+      Name: "ID",
+      CIty: "Basel",
+      LocationCode: 3
+    },
+    {
+      Name: "MSP",
+      CIty: "London",
+      LocationCode: 4
+    },
+    {
+      Name: "Noser",
+      CIty: "New York",
+      LocationCode: 5
+    },
+    {
+      Name: "Microsoft",
+      CIty: "Los Angeles",
+      LocationCode: 6
+    },
+    {
+      Name: "Apple",
+      CIty: "Paris",
+      LocationCode: 7
+    },
+    {
+      Name: "Nike",
+      CIty: "Rome",
+      LocationCode: 8
+    },
+    {
+      Name: "Adidas",
+      CIty: "Milan",
+      LocationCode: 9
+    },
+    {
+      Name: "IMS",
+      CIty: "Turin",
+      LocationCode: 10
+    },
+])

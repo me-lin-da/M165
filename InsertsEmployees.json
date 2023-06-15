@@ -1,0 +1,53 @@
+use sample_mflix
+db.movies.insertMany([
+   {
+      FirstName: "Tehran",
+      LastName: "Doroudchi",
+      BirthYear: 1998
+    },
+    {
+      FirstName: "Lin",
+      LastName: "Sinzig",
+      BirthYear: 2005
+    },
+    {
+      FirstName: "Ricky",
+      LastName: "Staub",
+      BirthYear: 2006
+    },
+    {
+      FirstName: "Andri",
+      LastName: "Luthi",
+      BirthYear: 2004
+    },
+    {
+      FirstName: "Loic",
+      LastName: "Imhof",
+      BirthYear: 2003
+    },
+    {
+      FirstName: "Jan",
+      LastName: "Jackson",
+      BirthYear: 2000
+    },
+    {
+      FirstName: "David",
+      LastName: "Reymond",
+      BirthYear: 1990
+    },
+    {
+      FirstName: "Paulo",
+      LastName: "Lalicata",
+      BirthYear: 1989
+    },
+    {
+      FirstName: "Ben",
+      LastName: "Ambuhl",
+      BirthYear: 2000
+    },
+    {
+      FirstName: "Nico",
+      LastName: "Luthi",
+      BirthYear: 1999
+    },
+])

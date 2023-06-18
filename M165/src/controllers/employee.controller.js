@@ -14,7 +14,8 @@ const getAllEmployees = (async (req, res)=> {
 const newEmployee = async (req, res)=> {
     const user = new EmployeeModel({
       firstName: req.body.firstName,
-        lastName: req.body.lastName
+        lastName: req.body.lastName,
+        company: req.body.company
           });
       try {
         const newUser = await user.save();

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 const companySchema = new mongoose.Schema({
     name: {
         type: String,
@@ -10,7 +9,7 @@ const companySchema = new mongoose.Schema({
     city: {
         type: String,
         required: true
-    },
-})
+    }
+});
 
-module.exports = mongoose.model('Compnay', companySchema);
+module.exports = mongoose.model('Company', companySchema);

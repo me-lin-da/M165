@@ -9,6 +9,14 @@ const getAllCompanies = async (req, res) => {
   res.send(results).status(200);
 };
 
+const getCompanyById = async (req, res) => {
+  const { id } = req.params;
+
+  let results = await CompanyModel.findOne({ _id: id });
+
+  res.send(results).status(200);
+};
+
 const newCompany = async (req, res) => {
   const company = new CompanyModel({
     name: req.body.name,
@@ -56,4 +64,5 @@ module.exports = {
   newCompany,
   updateCompany,
   deleteCompany,
+  getCompanyById,
 };

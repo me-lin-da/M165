@@ -7,6 +7,14 @@ const getAllEmployees = async (req, res) => {
   res.send(results).status(200);
 };
 
+const getEmployeById = async (req, res) => {
+  const { id } = req.params;
+
+  let results = await EmployeeModel.findOne({ _id: id });
+
+  res.send(results).status(200);
+};
+
 const newEmployee = async (req, res) => {
   const user = new EmployeeModel({
     firstName: req.body.firstName,
@@ -57,4 +65,5 @@ module.exports = {
   newEmployee,
   updateEmployee,
   deleteEmployee,
+  getEmployeById,
 };

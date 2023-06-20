@@ -1,23 +1,41 @@
-
-const { getAllCompanies, newCompany, updateCompany, deleteCompany } = require("../controllers/company.controller");
-const {deleteEmployee, updateEmployee, getAllEmployees, newEmployee } = require("../controllers/employee.controller");
+const {
+  getAllCompanies,
+  newCompany,
+  updateCompany,
+  deleteCompany,
+  getCompanyById,
+} = require("../controllers/company.controller");
+const {
+  deleteEmployee,
+  updateEmployee,
+  getAllEmployees,
+  getEmployeById,
+  newEmployee,
+} = require("../controllers/employee.controller");
 
 const express = require("express");
 const router = express.Router();
 
-router.get('/employee', getAllEmployees)
+//emloyee
+router.get("/employee", getAllEmployees);
 
-router.post('/employee', newEmployee)
+router.get("/employee/:id", getEmployeById);
 
-router.put('/employee', updateEmployee)
+router.post("/employee", newEmployee);
 
-router.delete('/employee/:id', deleteEmployee)
+router.put("/employee", updateEmployee);
 
-router.get('/company', getAllCompanies)
+router.delete("/employee/:id", deleteEmployee);
 
-router.post('/company', newCompany)
+//company
+router.get("/company", getAllCompanies);
 
-router.put('/company', updateCompany)
+router.get("/company/:id", getCompanyById);
 
-router.delete('/company/:id', deleteCompany)
+router.post("/company", newCompany);
+
+router.put("/company", updateCompany);
+
+router.delete("/company/:id", deleteCompany);
+
 module.exports = router;

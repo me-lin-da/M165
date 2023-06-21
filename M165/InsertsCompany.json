@@ -13,7 +13,7 @@ db.company.insertMany([
     },
     {
       Name: "ID",
-      CIty: "Basel",
+      City: "Basel",
       LocationCode: 3
     },
     {

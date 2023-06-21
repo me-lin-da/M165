@@ -7,12 +7,28 @@ const router = express.Router();
 let app = express();
 let indexRouter = require("./routes/route");
 const bodyParser = require("body-parser");
+const { CompanySeeder } = require("./models/data/companyData");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use("/", indexRouter);
 
-mongoose.connect("mongodb://root:root@localhost:27017/mydb");
+async function runSeeders() {
+  const companySeeder = new CompanySeeder();
+  await companySeeder.seed();
+}
+
+async function connectToDatabase() {
+  try {
+    await mongoose.connect("mongodb://root:root@localhost:27017/mydb");
+    await runSeeders();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+connectToDatabase();
+
 const mongodb = mongoose.connection;
 
 mongodb.on("error", (error) => console.error(error));

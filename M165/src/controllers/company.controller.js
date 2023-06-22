@@ -6,15 +6,23 @@ const CompanyModel = require("../models/company");
 const getAllCompanies = async (req, res) => {
   let results = await CompanyModel.find({}).limit(50);
 
-  res.send(results).status(200);
+  if (results) {
+    res.send(results).status(200);
+  } else {
+    res.status(204);
+  }
 };
 
 const getCompanyById = async (req, res) => {
   const { id } = req.params;
-
   let results = await CompanyModel.findOne({ _id: id });
-
-  res.send(results).status(200);
+  if (results) {
+    res.send(results).status(200);
+  } else {
+    res
+      .send({ message: "company with id: " + id + " doesnt exist" })
+      .status(204);
+  }
 };
 
 const newCompany = async (req, res) => {

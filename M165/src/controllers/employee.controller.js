@@ -4,15 +4,24 @@ const EmployeeModel = require("../models/employee");
 const getAllEmployees = async (req, res) => {
   let results = await EmployeeModel.find({}).limit(50);
 
-  res.send(results).status(200);
+  if (results) {
+    res.send(results).status(200);
+  } else {
+    res.status(204);
+  }
 };
 
 const getEmployeById = async (req, res) => {
   const { id } = req.params;
 
   let results = await EmployeeModel.findOne({ _id: id });
-
-  res.send(results).status(200);
+  if (results) {
+    res.send(results).status(200);
+  } else {
+    res
+      .send({ message: "employee with id: " + id + " doesnt exist" })
+      .status(204);
+  }
 };
 
 const newEmployee = async (req, res) => {

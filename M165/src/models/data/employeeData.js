@@ -60,7 +60,6 @@ const data = [
 
 class EmployeeSeeder extends Seeder {
   async shouldRun() {
-    console.log(employeeModel.count);
     return employeeModel
       .countDocuments()
       .exec()

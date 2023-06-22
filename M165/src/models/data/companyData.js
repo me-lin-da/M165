@@ -59,7 +59,6 @@ const data = [
 
 class CompanySeeder extends Seeder {
   async shouldRun() {
-    console.log(companyModel.count);
     return companyModel
       .countDocuments()
       .exec()
